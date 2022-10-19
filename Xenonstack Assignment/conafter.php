@@ -1,0 +1,129 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+{
+ header('location:login.php?msg=You Must Login First');
+}
+?>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="images/main.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/footer.css"/>
+    <style>
+    .left-side,#right_cont
+    {
+        text-align: center;
+        color: #C5B358;
+    }
+    @media (max-width: 768px)
+     {
+        .sep
+        {
+          display: none;
+        }
+      }
+      #conf
+      {
+        padding: 8px;
+        width: 100%;
+        margin: 10px;
+        outline-style: none;
+        border-style: none;
+        border-bottom: 1px solid #C5B358;
+        background-color: inherit;
+        color: #C5B358;
+      }
+      #conb
+      {
+        width: 250px;
+        font-size: 20px;
+        padding: 3px;
+        background-color: #C5B358;
+        color: #0B0B45;
+        border-style: none;
+        margin-top: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body style="background-image: url('images/main1.jpg');background-size: 100% 100%;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#0B0B45;font-family:'Times in new roman';">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"><i class="fa fa-car" style="font-size:50px;color:#C5B358;"></i></a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="afterlogin.php" style="color: #C5B358;">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="conafter.php" style="color: #C5B358;">Contact Us</a>
+          </li>
+        </ul>
+        <a href="login.php" style="color:#C5B358;text-decoration:none;margin-right:5px;font-size:20px;">Logout&nbsp;<i class="fa fa-sign-in"></i></a>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="container" style="height:auto;padding:50px;margin-top:50px; margin-bottom: 50px;font-family:'Times in new roman';background-color:#0B0B45;font-size:18px;border-radius:8px;box-shadow: 0 0 15px #0B0B45; ">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="left-side">
+              <div class="address details" style="padding:10px;">
+                <i class="fa fa-map-marker" style="font-size:30px;"></i>
+                <div class="topic" style="font-size:20px;color:white;margin-top:5px;">Address</div>
+                <div class="text-one">Chandigarh University</div>
+                <div class="text-two">Mohali, Punjab</div>
+              </div>
+              <div class="phone details" style="padding:10px;">
+                <i class="fa fa-phone" style="font-size:30px;"></i>
+                <div class="topic" style="font-size:20px;color:white;margin-top:5px;">Phone</div>
+                <div class="text-one">+91 89579 0##64</div>
+                <div class="text-two">+91 78970 9##40</div>
+              </div>
+              <div class="email details" style="padding:10px;">
+                <i class="fa fa-envelope" style="font-size:30px;"></i>
+                <div class="topic" style="font-size:20px;color:white;margin-top:5px;">Email</div>
+                <div class="text-one">carsellinginindia@gmail.com</div>
+                <div class="text-two">carsellinginabroad@gmail.com</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <div style="border-right:3px solid #C5B358;height:300px; margin-top:60px;" class="sep"></div>
+          </div>
+          <div class="col-sm-8" id="right_cont">
+            <h2>SEND US A MESSAGE</h2>
+            <p style="margin-top:15px;color:white;">If you have any quries related to our policies, you can send us message from here.</p>
+            <form action="#" method="post">
+              <input type="email" placeholder="Email" id="conf">
+              <textarea rows="5" cols="80" id="conf" placeholder="Write your query here" style="resize:none;"></textarea>
+              <input type="submit" value="Send" id="conb">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row" style="background-color: #0B0B45; padding:50px;">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <a href="#" id="foot" style="padding-left:14px; padding-right:14px"><i class="fa fa-facebook"></i></a>
+          <a href="#" id="foot" target="_blank"><i class="fa fa-google"></i></a>
+          <a href="#" id="foot" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="#" id="foot" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="#" id="foot" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row">
+      </div>
+    </div>
+  </body>
+</html>
